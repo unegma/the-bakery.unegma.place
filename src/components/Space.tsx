@@ -28,6 +28,11 @@ export default function Space() {
   console.log(nodes,materials);
 
   return (
-    <mesh material={materials.material_0} geometry={nodes.mesh_0.geometry} />
+    <>
+      <mesh material={materials['material_0.003']} geometry={nodes.Mesh_0003.geometry} />
+      <mesh material={materials['material_0']} geometry={nodes.Mesh_0003_1.geometry} />
+      <mesh material={materials['material_0.001']} geometry={nodes.Mesh_0003_2.geometry} />
+      <mesh material={materials['material_0.002']} geometry={nodes.Mesh_0003_3.geometry} />
+    </>
   )
 }

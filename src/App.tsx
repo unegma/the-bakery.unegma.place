@@ -27,7 +27,7 @@ function App() {
 
         <ambientLight/>
         <pointLight intensity={3} position={[0, 0, 0]}/>
-        <PerspectiveCamera position={[5,5,5]} makeDefault/>
+        <PerspectiveCamera position={[9,9,9]} makeDefault/>
 
         <Suspense fallback={<Html className="white">loading 3d view..</Html>}>
           <Space />
