@@ -41,13 +41,13 @@ export default function BookingModal ({ showBookingModal, setShowBookingModal }:
 
         <br/>
 
-        <Link to={'space'} onClick={() => setShowBookingModal(false)}>See The Space in 3D and VR</Link>
+        <Link to={'boardroom'} onClick={() => setShowBookingModal(false)}>See The Space in 3D and VR</Link>
 
         <br/>
         <br/>
 
         <Typography className="secondaryColor">
-          <a target="_blank" href="#">Booking Form</a><br/>
+          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdQHtz24-Y8gcrVr0LunukHl0H0dbOjOuin6kFvtbkc7ZptuA/viewform">Booking Form</a><br/>
         </Typography>
       </Box>
     </Modal>
