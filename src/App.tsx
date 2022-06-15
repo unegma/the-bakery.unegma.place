@@ -1,38 +1,76 @@
-import React, {Suspense, useState} from 'react';
+import React, {useState} from 'react';
+import {
+  Route, Routes
+} from "react-router-dom";
 import './App.css';
 import NavBar from "./components/NavBar";
-import Space from "./components/Space";
-import {DefaultXRControllers, useXR, VRCanvas} from '@react-three/xr';
-import {Html, OrbitControls, PerspectiveCamera} from "@react-three/drei";
-import {CameraAltOutlined, ChevronLeft, ChevronRight, InfoOutlined} from "@mui/icons-material";
+import {CameraAltOutlined, ChevronLeft, ChevronRight, InfoOutlined, Menu} from "@mui/icons-material";
 import PhotoViewer from "./components/PhotoViewer";
 import InfoModal from "./components/InfoModal";
+import LeftSideDrawer from "./components/LeftSideDrawer";
+import HomeScreen from "./components/HomeScreen";
+import SpaceOne from "./components/SpaceOne";
 
 function App() {
-  const { player } = useXR();
-  const [showImages, setShowImages] = useState(true);
+  const [showImages, setShowImages] = useState(false);
   const [showInfoModal, setShowInfoModal] = useState(false);
+
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+  const toggleLeftSideDrawer = (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (event.type === 'keydown' && (
+        (event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift'))
+      {
+        return;
+      }
+      setDrawerOpen(!drawerOpen);
+  };
 
   return (
     <div className="App">
+      {/*<CssBaseline /> todo add this? */}
+
       <NavBar />
       <InfoModal showInfoModal={showInfoModal} setShowInfoModal={setShowInfoModal} />
       <PhotoViewer showImages={showImages} />
 
-      <VRCanvas>
-        <DefaultXRControllers />
+      <LeftSideDrawer
+        drawerOpen={drawerOpen}
+        toggleLeftSideDrawer={toggleLeftSideDrawer}
+        setShowImages={setShowImages}
+        setShowInfoModal={setShowInfoModal}
+      />
 
-        {/*lock zoom to keep dolls house view. Can use minPolarAngle={Math.PI/2.1} maxPolarAngle={Math.PI/2.1} to lock rotation */}
-        <OrbitControls enableZoom={false} enablePan={false} />
+      <Routes>
+        <Route
+          key={'home'}
+          path="/"
+          element={
+            <HomeScreen toggleLeftSideDrawer={toggleLeftSideDrawer}/>
+          }
+        />
 
-        <ambientLight/>
-        <pointLight intensity={3} position={[0, 0, 0]}/>
-        <PerspectiveCamera position={[9,9,9]} makeDefault/>
+        <Route
+          key={'space'}
+          path="/space"
+          element={
+            <SpaceOne />
+          }
+        />
 
-        <Suspense fallback={<Html className="white">loading 3d view..</Html>}>
-          <Space />
-        </Suspense>
-      </VRCanvas>
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
+      </Routes>
+
+      <div className={`buttons-container buttons-container--left`}>
+        <Menu className="pointer" style={{ color: "white", margin: "0 4px" }} onClick={(event) => {toggleLeftSideDrawer(event)}}/>
+      </div>
 
       <div className="buttons-container">
         <InfoOutlined className="pointer" style={{ color: "white", margin: "0 4px" }} onClick={() => {setShowInfoModal(!showInfoModal)}}/>
