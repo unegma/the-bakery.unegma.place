@@ -9,6 +9,7 @@ import PhotoViewer from "./components/PhotoViewer";
 import InfoModal from "./components/InfoModal";
 import LeftSideDrawer from "./components/LeftSideDrawer";
 import HomeScreen from "./components/HomeScreen";
+import BoardroomSpace from "./components/Boardroom";
 import SpaceOne from "./components/SpaceOne";
 
 function App() {
@@ -55,6 +56,14 @@ function App() {
           path="/space"
           element={
             <SpaceOne />
+          }
+        />
+
+        <Route
+          key={'boardroom'}
+          path="/boardroom"
+          element={
+            <BoardroomSpace />
           }
         />
 
