@@ -51,8 +51,8 @@ export default function BookingModal ({ showBookingModal, setShowBookingModal }:
 
         <Typography variant="h5" className="secondaryColor">Calendar & Booking Form</Typography>
         <br/>
-        <Typography className="secondaryColor">You will need to be signed in to book the space and see the calendar!</Typography>
-        <br/>
+        {/*<Typography className="secondaryColor">You will need to be signed in to book the space and see the calendar!</Typography>*/}
+        {/*<br/>*/}
 
         <iframe
           src="https://calendar.google.com/calendar/embed?src=c_3p8b8v555vg5mdsrdhu6ob88ms%40group.calendar.google.com&ctz=Europe%2FLondon"
