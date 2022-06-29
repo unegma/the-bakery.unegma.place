@@ -62,7 +62,7 @@ export default function BookingModal ({ showBookingModal, setShowBookingModal }:
         {/*  <a target="_blank" href="https://calendar.google.com/calendar/u/0/embed?src=c_3p8b8v555vg5mdsrdhu6ob88ms@group.calendar.google.com&ctz=Europe/London">Boardroom Calendar</a><br/>*/}
         {/*</Typography>*/}
         <Typography className="secondaryColor">
-          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdQHtz24-Y8gcrVr0LunukHl0H0dbOjOuin6kFvtbkc7ZptuA/viewform">Booking Form (email for access)</a><br/>
+          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdQHtz24-Y8gcrVr0LunukHl0H0dbOjOuin6kFvtbkc7ZptuA/viewform">Booking Form</a><br/>
         </Typography>
 
       </Box>
