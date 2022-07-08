@@ -49,21 +49,24 @@ export default function BookingModal ({ showBookingModal, setShowBookingModal }:
         <Divider />
         <br/>
 
-        <Typography variant="h5" className="secondaryColor">Calendar & Booking Form</Typography>
+
+        <Button variant='contained' color='primary'>
+          <a className='booking-button' target="_blank"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSdQHtz24-Y8gcrVr0LunukHl0H0dbOjOuin6kFvtbkc7ZptuA/viewform"
+          >Book Here</a></Button>
+
+        <br/>
         <br/>
         {/*<Typography className="secondaryColor">You will need to be signed in to book the space and see the calendar!</Typography>*/}
         {/*<br/>*/}
 
         <iframe
-          src="https://calendar.google.com/calendar/embed?src=c_3p8b8v555vg5mdsrdhu6ob88ms%40group.calendar.google.com&ctz=Europe%2FLondon"
+          src="https://calendar.google.com/calendar/embed?src=c_3p8b8v555vg5mdsrdhu6ob88ms%40group.calendar.google.com&ctz=Europe%2FLondon&mode=WEEK&showTitle=0"
           style={{"border": 0, width:"100%", height:"60vh"}}></iframe>
 
         {/*<Typography className="secondaryColor">*/}
         {/*  <a target="_blank" href="https://calendar.google.com/calendar/u/0/embed?src=c_3p8b8v555vg5mdsrdhu6ob88ms@group.calendar.google.com&ctz=Europe/London">Boardroom Calendar</a><br/>*/}
         {/*</Typography>*/}
-        <Typography className="secondaryColor">
-          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdQHtz24-Y8gcrVr0LunukHl0H0dbOjOuin6kFvtbkc7ZptuA/viewform">Booking Form</a><br/>
-        </Typography>
 
       </Box>
     </Modal>

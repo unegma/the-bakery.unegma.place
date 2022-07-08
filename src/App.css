@@ -196,3 +196,8 @@ canvas {
   padding: 8px;
   padding-left: 14px;
 }
+
+.booking-button {
+  color: white;
+  text-decoration: none;
+}
