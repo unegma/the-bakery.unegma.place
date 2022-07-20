@@ -237,3 +237,14 @@ canvas {
 .minitext {
   font-size: 10px;
 }
+
+.web3connectButton {
+  background-color: green !important;
+  color: white !important;
+  border: none !important;
+}
+
+
+.web3connectButton:hover {
+  opacity: 0.8 !important;
+}
