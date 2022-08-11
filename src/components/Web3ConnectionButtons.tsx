@@ -6,9 +6,9 @@ import { useEagerConnect, useInactiveListener } from "../helpers/hooks";
 import getErrorMessage from "../helpers/getErrorMessage";
 import { Spinner } from "./Spinner";
 import { Button, Modal, Box} from "@mui/material";
-// import DonateButton from "./DonateButton";
 import {Typography} from "@mui/material";
 import {HighlightOff as HighlightOffIcon} from "@mui/icons-material";
+import BuyButton from "./BuyButton";
 
 const modalStyle = {
   position: 'absolute' as 'absolute',
@@ -174,20 +174,27 @@ export default function Web3ConnectionButtons({setAddress, setSettingsOpen}: any
             </div>
             }
           </div>
-
+          <Button className="closeModalButton--large" variant="contained" color="primary" onClick={hideModal}>
+            Close
+          </Button>
         </Box>
       </Modal>
 
       {(!active && !error) && (
-        <Button variant="outlined" color="secondary" className={`connectButton web3connectButton`} onClick={showModal}>
-          Connect
-        </Button>
+        <>
+          <div className="donateButton-container">
+            <BuyButton />
+          </div>
+          <Button variant="outlined" color="secondary" className={`connectButton web3connectButton`} onClick={showModal}>
+            Connect
+          </Button>
+        </>
       )}
 
       {(active || error) && (
         <>
           <div className="donateButton-container">
-            {/*<DonateButton />*/}
+            <BuyButton />
           </div>
           <Button variant="outlined" color="secondary" className={`disconnectButton web3connectButton`} onClick={() => {handleDisconnect()}}>
             Disconnect

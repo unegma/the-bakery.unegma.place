@@ -156,6 +156,13 @@ canvas {
   top:5px !important;
 }
 
+.closeModalButton--large {
+  cursor: pointer;
+  position: absolute !important;
+  right: 15px !important;
+  bottom:15px !important;
+}
+
 .home-screen-image {
   background-size: cover;
   background-repeat: no-repeat;
@@ -176,10 +183,15 @@ canvas {
   align-items: center;
 }
 
+.home-screen-button-container {
+  position: absolute;
+  right: 15vw !important;
+}
+
 .home-screen-button {
-  color: black !important;
+  color: white !important;
   border-color: white !important;
-  background-color: white !important;
+  background-color: red !important;
   font-weight: bold !important;
 }
 
@@ -205,6 +217,9 @@ canvas {
 
 .red {
   color: red;
+}
+.green {
+  color: green;
 }
 
 .connect-button {
@@ -247,4 +262,8 @@ canvas {
 
 .web3connectButton:hover {
   opacity: 0.8 !important;
+}
+
+.buyButton {
+  margin-right: 5px !important;
 }
