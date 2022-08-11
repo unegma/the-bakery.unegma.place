@@ -55,7 +55,8 @@ export default function BuyButton() {
       .then((signature: any) => {
         console.log(signature);
         setConsoleState('success');
-        setConsoleMessage(`Thanks! Check console for receipt!`);
+        setConsoleMessage(`Thanks!`);
+        // todo get receipt
       })
       .catch((error: any) => {
         console.log(error);
