@@ -76,7 +76,7 @@ export default function LeftSideDrawer(
         <List>
           <ListItem key={'spaceone'} disablePadding onClick={() => setShowInfoModal(true)}>
             <ListItemButton>
-              <ListItemText primary={'Info'} />
+              <ListItemText primary={'Find Us!'} />
             </ListItemButton>
           </ListItem>
 
