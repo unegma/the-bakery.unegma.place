@@ -267,3 +267,7 @@ canvas {
 .buyButton {
   margin-right: 5px !important;
 }
+
+.info-map {
+  min-height: 40vh;
+}
