@@ -200,3 +200,10 @@ canvas {
 .info-map {
   min-height: 40vh;
 }
+
+.closeModalButton--large {
+  cursor: pointer;
+  position: absolute !important;
+  right: 15px !important;
+  bottom:15px !important;
+}
