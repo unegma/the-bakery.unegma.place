@@ -12,7 +12,7 @@ export default function SpaceOne() {
       <DefaultXRControllers />
 
       {/*lock zoom to keep dolls house view. Can use minPolarAngle={Math.PI/2.1} maxPolarAngle={Math.PI/2.1} to lock rotation */}
-      <OrbitControls enableZoom={false} enablePan={false} />
+      <OrbitControls enableZoom={false} enablePan={true} />
 
       <ambientLight/>
       <pointLight intensity={3} position={[0, 0, 0]}/>
