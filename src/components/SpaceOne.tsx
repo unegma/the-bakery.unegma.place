@@ -39,7 +39,7 @@ export default function SpaceOne() {
     setZoomOn(!zoomOn);
 
     if (!zoomOn) {
-      alert('PLEASE BE AWARE\nThis model is a reduced quality scan\nThis will be more noticeable when zooming!')
+      alert('Zoom Enabled\n\nPLEASE BE AWARE\n\nThis model is a reduced quality scan\nThis will be more noticeable when zooming!')
       setHelperText(`⚲ or ${initialHelperText}`);
     } else {
       setHelperText(initialHelperText);
