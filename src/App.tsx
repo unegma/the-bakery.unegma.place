@@ -4,19 +4,19 @@ import {
 } from "react-router-dom";
 import './App.css';
 import NavBar from "./components/NavBar";
-import {CameraAltOutlined, ChevronLeft, ChevronRight, InfoOutlined, Menu} from "@mui/icons-material";
+import {CameraAltOutlined, ChevronLeft, ChevronRight, InfoOutlined, Menu, ZoomIn, ZoomOut} from "@mui/icons-material";
 import PhotoViewer from "./components/PhotoViewer";
 import InfoModal from "./components/InfoModal";
 import LeftSideDrawer from "./components/LeftSideDrawer";
 import HomeScreen from "./components/HomeScreen";
 import SpaceOne from "./components/SpaceOne";
+import GridOnIcon from '@mui/icons-material/GridOn';
 // import BookingModal from "./components/BookingModal";
 
 function App() {
   const [showImages, setShowImages] = useState(false);
   const [showInfoModal, setShowInfoModal] = useState(false);
   const [showBookingModal, setShowBookingModal] = useState(false);
-
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const toggleLeftSideDrawer = (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -50,7 +50,7 @@ function App() {
           key={'home'}
           path="/"
           element={
-            <HomeScreen  toggleLeftSideDrawer={toggleLeftSideDrawer}/>
+            <HomeScreen toggleLeftSideDrawer={toggleLeftSideDrawer} />
           }
         />
 
