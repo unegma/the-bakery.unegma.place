@@ -72,7 +72,7 @@ export default function SpaceOne({space, cameraPosition}: any) {
 
         <ambientLight/>
         <pointLight intensity={3} position={[0, 0, 0]}/>
-        <PerspectiveCamera position={[5,5,5]} makeDefault/>
+        <PerspectiveCamera position={cameraPosition} makeDefault/>
 
         <group visible={gridOn}>
           <gridHelper position={[0,-1.4,-3.81]}/>
