@@ -68,6 +68,8 @@ export default function SpaceOne() {
 
         {/*lock zoom to keep dolls house view. Can use minPolarAngle={Math.PI/2.1} maxPolarAngle={Math.PI/2.1} to lock rotation */}
         <OrbitControls enableZoom={zoomOn} enablePan={true} />
+        {/*todo add zoom controls*/}
+        {/*<OrbitControls enableZoom={zoomOn} enablePan={true} minDistance={4} maxDistance={10} />*/}
 
         <ambientLight/>
         <pointLight intensity={3} position={[0, 0, 0]}/>
