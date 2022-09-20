@@ -1,12 +1,11 @@
 import {DefaultXRControllers, VRCanvas, useXR} from "@react-three/xr";
 import {Html, OrbitControls, PerspectiveCamera} from "@react-three/drei";
 import React, {Suspense, useState} from "react";
-import Space from "./Space";
 import {Menu, ZoomIn, ZoomOut} from "@mui/icons-material";
 import GridOnIcon from "@mui/icons-material/GridOn";
 const initialHelperText = '↺ or ⇉ Model';
 
-export default function SpaceOne() {
+export default function SpaceOne({space, cameraPosition}: any) {
   const { player } = useXR();
 
   const [gridOn, setGridOn] = useState(false);
@@ -89,7 +88,7 @@ export default function SpaceOne() {
         </group>
 
         <Suspense fallback={<Html className="white">loading 3d view..</Html>}>
-          <Space  />
+          {space}
         </Suspense>
       </VRCanvas>
     </>

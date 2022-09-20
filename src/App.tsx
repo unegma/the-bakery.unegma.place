@@ -10,7 +10,7 @@ import InfoModal from "./components/InfoModal";
 import LeftSideDrawer from "./components/LeftSideDrawer";
 import HomeScreen from "./components/HomeScreen";
 import SpaceOne from "./components/SpaceOne";
-import GridOnIcon from '@mui/icons-material/GridOn';
+import Space from "./components/Space";
 // import BookingModal from "./components/BookingModal";
 
 function App() {
@@ -58,7 +58,7 @@ function App() {
           key={'space'}
           path="/space"
           element={
-            <SpaceOne />
+            <SpaceOne cameraPosition={[5,5,5]} space={<Space />}/>
           }
         />
 
