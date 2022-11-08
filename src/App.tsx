@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {
   Route, Routes
 } from "react-router-dom";
-import './App.css';
+import './App.scss';
 import NavBar from "./components/NavBar";
 import {CameraAltOutlined, ChevronLeft, ChevronRight, InfoOutlined, Menu} from "@mui/icons-material";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -10,15 +10,15 @@ import PhotoViewer from "./components/PhotoViewer";
 import InfoModal from "./components/InfoModal";
 import LeftSideDrawer from "./components/LeftSideDrawer";
 import HomeScreen from "./components/HomeScreen";
-import BoardroomSpace from "./components/Boardroom";
+import BoardroomSpace from "./components/BoardroomSpace";
 import SpaceOne from "./components/SpaceOne";
+import Space from "./components/Space";
 // import BookingModal from "./components/BookingModal";
 
 function App() {
   const [showImages, setShowImages] = useState(false);
   const [showInfoModal, setShowInfoModal] = useState(false);
   const [showBookingModal, setShowBookingModal] = useState(false);
-
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const toggleLeftSideDrawer = (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -60,7 +60,7 @@ function App() {
           key={'space'}
           path="/space"
           element={
-            <SpaceOne />
+            <SpaceOne cameraPosition={[5,5,5]} space={<Space />}/>
           }
         />
 
@@ -68,7 +68,7 @@ function App() {
           key={'boardroom'}
           path="/boardroom"
           element={
-            <BoardroomSpace />
+            <SpaceOne cameraPosition={[5,5,5]} space={<BoardroomSpace />}/>
           }
         />
 
@@ -81,10 +81,6 @@ function App() {
           }
         />
       </Routes>
-
-      <div className={`buttons-container buttons-container--left`}>
-        <Menu className="pointer" style={{ color: "white", margin: "0 4px" }} onClick={(event) => {toggleLeftSideDrawer(event)}}/>
-      </div>
 
       <div className="buttons-container">
         <LocationOnIcon className="pointer" style={{ color: "white", margin: "0 4px" }} onClick={() => {setShowInfoModal(!showInfoModal)}}/>
